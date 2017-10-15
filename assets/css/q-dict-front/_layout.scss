@@ -1,0 +1,59 @@
+body {
+    color: #333333;
+    font-size: 16px;
+  }
+  p {
+    padding: 0;
+    margin: 0;
+  }
+  .container {
+    width: 960px;
+  }
+  
+  .header {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    align-items: center !important
+  }
+  
+  h1 {
+    font-weight: bold;
+    /* text-align: center; */
+  }
+  
+  table {
+    margin: 1em 0;
+  }
+  
+  thead {
+    text-align: center;
+  }
+  
+  button:focus {
+    outline: none !important
+  }
+  
+  .translated-word {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .transcription {
+    text-align: center;
+    color: #555555
+  }
+  
+  textarea {
+    resize: vertical;
+    height: auto;
+  }
+  
+  .selected-word {
+    font-weight: 600;
+  }
+  
+  .status {
+    margin-left: 1em
+  }
