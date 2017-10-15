@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # webpack2-react-sass-env-boilerplate
 ### A boilerplate for creating applications with Webpack 3+, Babel w/ babel-preset-env, React and SASS.
 
@@ -82,3 +83,6 @@ React component (`App.js`).
 Development Javascript files are output to this folder from
 `webpack.config.dev.js` and static assets such as images and SASS can be
 placed in here.
+=======
+# q-dict-front
+>>>>>>> d044abc42b19cee437cd4a9d1d590b834881a6e0
