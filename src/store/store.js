@@ -133,7 +133,7 @@ class Store {
     @action getTranslate() {
         this.status = 'wait'
         let timestamp = Date.now()
-        axios.post('http://q-dict-server.herokuapp.com/translate', { data: this.word.en, resource: this.selectedResource() })
+        axios.post('//q-dict-server.herokuapp.com/translate', { data: this.word.en, resource: this.selectedResource() })
             .then(
                 res => {
                     if(timestamp < Date.now()) { // Нужно для фикса задержек асинхронных запросов
