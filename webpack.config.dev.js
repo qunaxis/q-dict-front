@@ -35,7 +35,7 @@ var modernizrConfig = {
 module.exports = {
   // The base directory for resolving the entry option
   context: __dirname,
-  devtool: 'eval',
+  devtool: 'cheap-eval-source-map',
 
   entry: {
     app: [

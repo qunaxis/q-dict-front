@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { observer } from 'mobx-react';
-import Word from '../components/Word'
+import { Container, Row, Col, Table, Input, Button, ButtonGroup, Alert } from 'reactstrap'
 
-import { Container, Row, Col, Table, Input, Button, ButtonGroup, ListGroup, ListGroupItem, Alert } from 'reactstrap'
+import Word from '../components/Word'
+import TranslationList from '../components/TranslationList'
 
 
 
@@ -18,7 +19,7 @@ export default class App extends Component {
     this.props.store.getTranslate()
   }
 
-  hanldeAddTranslate = (word) => {
+  handleAddTranslate = (word) => {
     this.props.store.addTranslate(word)
   }
 
@@ -70,26 +71,13 @@ export default class App extends Component {
           </Col>
           <Col xs={12} md={4}>
             <p className='transcription'>{ store.word.transcription }</p>
-            {/* <p className='transcription'>{ store.filteredTranslations }</p> */}
           </Col>
-          {
-            store.filteredTranslations.lenght != 0  
-            ? <Col xs={12} md={4}> 
-                <ListGroup>
-                  { store.filteredTranslations.map((word, key) => 
-                    <ListGroupItem className='translated-word' key={ key }>
-                      <p>{ word }</p>
-                      <Button outline onClick={ () => this.hanldeAddTranslate(word) }>+</Button>
-                    </ListGroupItem> 
-                  )}              
-                </ListGroup>
-              </Col>
-            : ''
-          }
+          <Col xs={12} md={4}> 
+            <TranslationList filteredTranslations={ store.filteredTranslations } handleAddTranslate={ this.handleAddTranslate } />
+          </Col>
         </Row>
         <Table hover>
           <thead>
-            {/* <td></td> */}
             <tr>
               <th>English</th>
               <th>Russian</th>
