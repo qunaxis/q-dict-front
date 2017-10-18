@@ -52,8 +52,13 @@ body {
   
   .selected-word {
     font-weight: 600;
+    cursor: pointer;
   }
   
   .status {
-    margin-left: 1em
+    margin-left: 1em;
   }
+
+  .translated-word {
+    cursor: pointer;
+}

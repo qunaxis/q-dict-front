@@ -10,9 +10,12 @@ const TranslationList = (props) => {
         return (
             <ListGroup>            
                 { filteredTranslations.map((word, key) => 
-                    <ListGroupItem className='translated-word' key={ key }>
+                    <ListGroupItem 
+                        key={ key }
+                        className='translated-word'
+                        onClick={ () => handleAddTranslate(word) }
+                    >
                         <p>{ word }</p>
-                        <Button outline onClick={ () => handleAddTranslate(word) }>+</Button>
                     </ListGroupItem> 
                 )}              
             </ListGroup>      
