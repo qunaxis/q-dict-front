@@ -21,7 +21,7 @@ ReactDOM.render((
 
 
 if (module.hot) {
-  module.hot.accept('./App', () => {
+  module.hot.accept('./containers/App', () => {
     ReactDOM.render((
       <AppContainer>
         <App store={ store }/>

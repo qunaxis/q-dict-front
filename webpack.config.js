@@ -2,6 +2,7 @@ var path = require('path')
 var webpack = require('webpack')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+var BabelEnginePlugin = require('babel-engine-plugin')
 //var ModernizrPlugin = require('modernizr-webpack-plugin')
 
 /**
@@ -65,7 +66,7 @@ module.exports = {
     descriptionFiles: ['package.json'],
     moduleExtensions: ['-loader'],
     // Extensions used to resolve modules
-    extensions: ['.js', '.react.js', '.scss', '.css']
+    extensions: ['.js', '.jsx', '.react.js', '.scss', '.css']
   },
 
   module: {
@@ -99,6 +100,11 @@ module.exports = {
         use: ['babel', stripLogs],
         exclude: [/node_modules/]
       },
+      {
+        test: /\.jsx$/,
+        use: ['babel', stripLogs],
+        exclude: [/node_modules/]
+      },
     ],
   },
 
@@ -113,6 +119,9 @@ module.exports = {
     */
     new webpack.optimize.CommonsChunkPlugin({names: ['vendor'],
                                              filename: 'vendor.js'}),
+    // new BabelEnginePlugin({
+    //     presets: ['env']
+    // }),
     new webpack.optimize.UglifyJsPlugin({
       compressor: {
         pure_getters: true,

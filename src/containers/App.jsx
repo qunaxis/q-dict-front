@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { observer } from 'mobx-react';
+import Word from '../components/Word'
 
 import { Container, Row, Col, Table, Input, Button, ButtonGroup, ListGroup, ListGroupItem, Alert } from 'reactstrap'
 
@@ -36,16 +37,6 @@ export default class App extends Component {
   render() {
     const { store } = this.props
     const { filteredWords } = store
-    const template = filteredWords.map((word => 
-      <tr key={ word.id }>
-        <td><span className={ store.wSelected == word.id ? 'selected-word' : '' } onClick={ () => this.handleChooseWord(word.id) }>{ word.en }</span></td>
-        <td>
-          { word.ru != undefined ? word.ru.sort().map((tr, id) => 
-            <p key={ id }>{ tr }</p>) : '' }
-        </td>
-        <td>{ word.transcription }</td>
-      </tr>
-    ))
 
     return (
       <Container>
@@ -106,7 +97,11 @@ export default class App extends Component {
             </tr>
           </thead>
           <tbody>
-            { template }
+            { 
+              filteredWords.map(word => 
+                <Word key={ word.id } word={ word } wSelected={ store.wSelected } handleChooseWord={ this.handleChooseWord } />
+              )
+            }      
           </tbody>
         </Table>
       </Container>

@@ -66,7 +66,7 @@ module.exports = {
     descriptionFiles: ['package.json'],
     moduleExtensions: ['-loader'],
     // Extensions used to resolve modules
-    extensions: ['.js', '.react.js', '.scss', '.css']
+    extensions: ['.js', '.jsx', '.react.js', '.scss', '.css']
   },
 
   module: {
@@ -93,6 +93,14 @@ module.exports = {
       },
       {
         test: /\.js$/,
+        use: [
+          'babel',
+          'react-hot-loader/webpack'
+        ],
+        exclude: [/node_modules/]
+      },
+      {
+        test: /\.jsx$/,
         use: [
           'babel',
           'react-hot-loader/webpack'

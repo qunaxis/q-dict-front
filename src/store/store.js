@@ -73,31 +73,17 @@ class Store {
 
     @computed get filteredTranslations() {
         let tSelected = search('id', this.wSelected, this.dictionary)
-        // tSelected.length > 0 ? tSelected.ru.peek() : ''
         let trCurrent = this.word.ru.peek()
-
-        console.groupCollapsed('filteredTranslations')
-        console.group('START')
-            console.log(tSelected)
-            console.log(trCurrent)
-        console.groupEnd()
 
         if (tSelected != undefined) {
             tSelected = tSelected.ru.peek()
             tSelected.forEach(tr => {
                 const key = trCurrent.indexOf(tr)
                 if (key != undefined && key != -1) {
-                    console.log(key + 'true' + trCurrent[key])
                     trCurrent.splice(key, 1)
                 }
             })
         }
-        
-        console.group('STOP')
-            console.log(tSelected)
-            console.log(trCurrent)
-        console.groupEnd()
-        console.groupEnd()
 
         return trCurrent
     }

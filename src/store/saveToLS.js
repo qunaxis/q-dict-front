@@ -12,7 +12,6 @@ function storedObservable (key, defaultValue, debounce) {
     localStorage.setItem(key, JSON.stringify(obsVal))
     console.log(obsVal)
   }, debounce)
-  console.log('From LocalStorage: ' + obsVal)
   return obsVal
 }
 
