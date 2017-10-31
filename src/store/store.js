@@ -3,6 +3,8 @@ import axios from 'axios'
 import shortid from 'shortid'
 import saveToLS from './saveToLS'
 
+import User from './user'
+
 // seacrh in array
 function search(prop, value, array){
     for (var i=0; i < array.length; i++) {
@@ -30,9 +32,9 @@ class Store {
     @observable word = {}
     @observable status = 'wait' // 'wait' | 'done' | 'error'
     @observable errorMessage = ''
-    @observable rSelected = 1;
-    @observable wSelected = null;
-
+    @observable rSelected = 1
+    @observable wSelected = null
+    @observable user = new User()
     constructor() {
         this.word = new Word()
         // let locStor = JSON.parse(localStorage['q-dict'])
@@ -88,12 +90,6 @@ class Store {
         return trCurrent
     }
 
-    @action selectWord(wordId) {
-        this.wSelected = wordId
-        this.word.en = search('id', this.wSelected, this.dictionary).en
-        this.getTranslate()
-    }
-
     @computed get filteredWords() {
         function checkRu(tr, matchesFilter) {
             let isHere = false;
@@ -108,12 +104,10 @@ class Store {
         return filteredWords
     }
 
-    selectedResource() {
-        const resources = [
-            'google',
-            'yandex'
-        ]
-        return resources[this.rSelected]
+    @action selectWord(wordId) {
+        this.wSelected = wordId
+        this.word.en = search('id', this.wSelected, this.dictionary).en
+        this.getTranslate()
     }
 
     @action getTranslate() {
@@ -137,6 +131,15 @@ class Store {
                 this.status = 'error'
                 this.errorMessage = error
             })
+    }
+
+
+    selectedResource() {
+        const resources = [
+            'google',
+            'yandex'
+        ]
+        return resources[this.rSelected]
     }
 }
     

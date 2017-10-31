@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import { observer } from 'mobx-react';
+import { inject, observer } from 'mobx-react';
 import { Container, Row, Col, Table, Input, Button, ButtonGroup, Alert } from 'reactstrap'
 
 import Word from '../components/Word'
 import TranslationList from '../components/TranslationList'
 
 
-
+@inject('store')
 @observer
 export default class App extends Component {
   onRadioBtnClick(rId) {

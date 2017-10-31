@@ -5,15 +5,10 @@ require('../assets/css/q-dict-front/core.scss')
 import 'babel-polyfill'
 import React from 'react'
 import { render } from 'react-dom'
-import App from './containers/App'
 
-import store from './store/store'
-
-
-
-const root = document.getElementById('q-dict-front')
+import MobxRouter from './router'
 
 render(
-    <App store={ store }/>, 
-    root
+    <MobxRouter />,
+    document.getElementById('root')
 )
