@@ -15,7 +15,7 @@ class User {
 
     @action authVk() {
         console.log('auth-vk')
-        axios.get('/auth/vk').then(user => {
+        axios.get('//q-dict-server.herokuapp.com/auth/vk').then(user => {
             this.user = user
         })
     }
