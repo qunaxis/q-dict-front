@@ -4,9 +4,6 @@
   "main": "es/index",
   "module": "es/index",
   "jsnext:main": "es/index",
-  "engines": {
-    "node": "8.7.0"
-  },
   "repository": {
     "type": "git",
     "url": ""
@@ -29,8 +26,8 @@
   "license": "MIT",
   "description": "This package includes everything you need to start building an application with Webpack 3, React and SASS.",
   "peerDependencies": {
-        "react": ">=16.x",
-       "react-dom": ">=16.x"
+      "react": ">=16.x",
+      "react-dom": ">=16.x"
   },
   "devDependencies": {
      "webpack2-react-sass-env-boilerplate": "^0.2.5"
