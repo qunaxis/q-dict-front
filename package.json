@@ -28,11 +28,16 @@
   "analyze": true,
   "license": "MIT",
   "description": "This package includes everything you need to start building an application with Webpack 3, React and SASS.",
-  "devDependencies": {
-    "babel-engine-plugin": "^0.1.2",
-    "webpack2-react-sass-env-boilerplate": "^0.2.6"
+  "peerDependencies": {
+        "react": ">=16.x",
+       "react-dom": ">=16.x"
   },
+  "devDependencies": {
+     "webpack2-react-sass-env-boilerplate": "^0.2.5"
+  },  
   "dependencies": {
+    "babel-engine-plugin": "^0.1.2",
+    "webpack2-react-sass-env-boilerplate": "^0.2.6",
     "axios": "^0.16.2",
     "bootstrap": ">=3.3.7",
     "file-loader": ">=1.1.4",
