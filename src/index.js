@@ -10,5 +10,5 @@ import MobxRouter from './router'
 
 render(
     <MobxRouter />,
-    document.getElementById('root')
+    document.getElementById('q-dict-front')
 )
