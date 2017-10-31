@@ -5,7 +5,8 @@
   "module": "es/index",
   "jsnext:main": "es/index",
   "engines": {
-    "node": "8.7.0"
+    "node": ">=6.9.1",
+    "npm": ">=3.10.0"
   },
   "repository": {
     "type": "git",
