@@ -1,14 +1,17 @@
 import React, { Component } from 'react'
+import { inject, observer } from 'mobx-react'
+
 
 @inject('store')
 @observer
 export default class Auth extends Component {
     handleVkAuthClick = () => {
-        store.user.authVk()
+        console.log('handleVkAuthClick')
+        this.props.store.user.authVk()
     }
     render() {
         return (
-            <button onClick={ () => { handleVkAuthClick } }>VK AUTH</button>
+            <button onClick={ this.handleVkAuthClick }>VK AUTH</button>
         )
     }
 }
