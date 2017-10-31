@@ -4,10 +4,6 @@
   "main": "es/index",
   "module": "es/index",
   "jsnext:main": "es/index",
-  "engines": {
-    "node": ">=6.9.1",
-    "npm": ">=3.10.0"
-  },
   "repository": {
     "type": "git",
     "url": ""
@@ -29,25 +25,26 @@
   "analyze": true,
   "license": "MIT",
   "description": "This package includes everything you need to start building an application with Webpack 3, React and SASS.",
-  "devDependencies": {
-    "babel-engine-plugin": "^0.1.2",
-    "webpack2-react-sass-env-boilerplate": "^0.2.6"
+  "peerDependencies": {
+        "react": ">=16.x",
+       "react-dom": ">=16.x"
   },
+  "devDependencies": {
+     "webpack2-react-sass-env-boilerplate": "^0.2.5"
+  },  
   "dependencies": {
+    "babel-engine-plugin": "^0.1.2",
+    "webpack2-react-sass-env-boilerplate": "^0.2.6",
     "axios": "^0.16.2",
     "bootstrap": ">=3.3.7",
-    "cross-env": "^5.1.1",
     "file-loader": ">=1.1.4",
     "lodash": ">=4.17.4",
     "mobx": "^3.3.0",
     "mobx-react": ">=4.3.3",
-    "mobx-react-router": "^4.0.1",
     "react": ">=16.0.0",
     "react-addons-css-transition-group": ">=15.6.2",
     "react-addons-transition-group": ">=15.6.2",
     "react-dom": ">=16.0.0",
-    "react-router": "^4.2.0",
-    "react-router-dom": "^4.2.2",
     "reactstrap": "^4.8.0",
     "shortid": ">=2.2.8",
     "url-loader": ">=0.5.9"
